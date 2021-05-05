@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="facility">
+ 	<insert id="insert" parameterType="fVO">
+ 		insert into "FACILITY" values(f_seq.nextval, #{flatitude}, #{flongtitude}, #{ftype})<!-- f_seq.nextval: 오토인크리먼트 -->
+ 	</insert>
+	<select id="select" parameterType="fVO">
+		select * from "FACILITY" where fid = #{fid}
+	</select>
+	<delete id="delete" parameterType="String">
+		delete from "FACILITY" where fid = #{fid}
+	</delete>
+</mapper>
+  
